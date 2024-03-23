@@ -4,8 +4,10 @@ import Header from "../Header/Header";
 const Root = () => {
   return (
     <div>
-      <div className="w-9/12 mx-auto">
+      <div className="bg-gradient-to-br from-[#e5e8fb] to-[#f1f0f4]">
         <Header></Header>
+      </div>
+      <div >
         <Outlet></Outlet>
       </div>
       <Footer></Footer>

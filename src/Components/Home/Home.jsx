@@ -4,7 +4,7 @@ import FeaturedJobs from "../FeaturedJobs/FeaturedJobs";
 
 const Home = () => {
     return (
-        <div>
+        <div className="w-9/12 mx-auto">
             <Banner></Banner>
             <CategoryList></CategoryList>
             <FeaturedJobs></FeaturedJobs>

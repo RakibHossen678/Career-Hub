@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Job from "../Job/Job";
+import Job from "../FeatureJob/FeatueJob";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -10,7 +10,7 @@ const FeaturedJobs = () => {
       .then((data) => setJobs(data));
   }, []);
   return (
-    <div>
+    <div >
       <h2 className="text-5xl font-medium text-center py-4">Featured Jobs</h2>
       <p className="text-center py-2">
         Explore thousands of job opportunities with all the information you

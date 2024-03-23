@@ -1,27 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const links = (
     <>
-      <NavLink to="/">
+      <NavLink className={({isActive})=> isActive ? 'text-primary' : 'text-black'} to="/">
         <a>Home</a>
       </NavLink>
-      <NavLink to="/jobs">
+      <NavLink className={({isActive})=> isActive ? 'text-primary' : 'text-black'} to="/jobs">
         <a>Jobs</a>
       </NavLink>
-      <NavLink to="/applied">
+      <NavLink className={({isActive})=> isActive ? 'text-primary' : 'text-black'} to="/applied">
         <a>Applied Jobs</a>
       </NavLink>
-      <NavLink to="/statistics">
+      <NavLink className={({isActive})=> isActive ? 'text-primary' : 'text-black'} to="/statistics">
         <a>Statistics</a>
       </NavLink>
-      <NavLink to="/blogs">
+      <NavLink className={({isActive})=> isActive ? 'text-primary' : 'text-black'} to="/blogs">
         <a>Blog</a>
       </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100 px-9 py-4">
+    <div className="navbar w-9/12 mx-auto px-9 py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,7 +47,9 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl">CareerHub</a>
+        <Link to='/'>
+        <a className="font-semibold text-4xl">CareerHub</a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-7">{links}</ul>
@@ -55,7 +57,7 @@ const Header = () => {
       <div className="navbar-end">
         <a
           href="#_"
-          className="px-5 py-2.5 relative rounded group font-medium text-white font-medium inline-block"
+          className="px-5 py-2.5 relative rounded group font-medium text-white  inline-block"
         >
           <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
           <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
