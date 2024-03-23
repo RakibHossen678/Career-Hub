@@ -1,12 +1,16 @@
-import { useParams, useLoaderData, Link } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { RiMoneyEuroCircleFill } from "react-icons/ri";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../Utility/LocalStorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   // console.log(id,jobs)
-  const job = jobs.find((job) => job.id == id);
+  const idInt=parseInt(id)
+  const job = jobs.find((job) => job.id == idInt);
   // console.log(job)
   const {
     job_description,
@@ -19,6 +23,11 @@ const JobDetails = () => {
     job_title
   } = job;
   const { address, email, phone } = contact_information;
+
+  const handleApplyJOb=()=>{
+    saveJobApplication(idInt),
+    toast('You have applied Successfully')
+  }
 
   return (
     <div >
@@ -70,10 +79,10 @@ const JobDetails = () => {
                 <h2 className="font-semibold">Phone: </h2>
                 <p>{phone}</p>
               </p>
-              <p className="flex space-x-1 pb-2">
-                <h2 className="font-semibold">Email:</h2>
+              <h2 className="flex space-x-1 pb-2">
+                <p className="font-semibold">Email:</p>
                 <p>{email}</p>
-              </p>
+              </h2>
               <h1 className="flex space-x-1">
                 <span className="font-semibold">Address:</span>
                 <p>{address}</p>
@@ -81,14 +90,15 @@ const JobDetails = () => {
             </div>
           </div>
           <div className="py-3">
-          <Link to='/' className="" >
+          
           <button className="flex justify-start bg-gradient-to-r from-[#7E90FE] to-[#9873FF] w-full  px-3 py-3 text-white font-bold rounded-lg">
-            <p className="text-center w-full">Apply Now</p>
+            <p onClick={handleApplyJOb} className="text-center w-full">Apply Now</p>
           </button>
-        </Link>
+        
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
