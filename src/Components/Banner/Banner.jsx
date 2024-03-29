@@ -1,7 +1,7 @@
 import user from "../../assets/images/user.png";
 const Banner = () => {
   return (
-    <div className="hero min-h-[calc(100vh-76px)] bg-base-200 ">
+    <div className="hero min-h-[calc(100vh-76px)] bg-gradient-to-br from-[#e5e8fb] to-[#f1f0f4] ">
       <div className="hero-content flex-col gap-7 lg:flex-row-reverse w-9/12 mx-auto items-center">
         <div className="h-96">
           <img

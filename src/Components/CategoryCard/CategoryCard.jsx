@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const CategoryCard = ({category}) => {
     const {availability,category_name,logo}=category
   return (
@@ -16,5 +17,7 @@ const CategoryCard = ({category}) => {
     </div>
   );
 };
-
+CategoryCard.propTypes ={
+    category:PropTypes.object
+}
 export default CategoryCard;
